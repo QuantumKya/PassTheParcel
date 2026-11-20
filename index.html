@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ParcelOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Topbar, name and time -->
+
+    <div class="topbar">
+        <p>ParcelOS</p>
+        <p id="clock">11/19/2026 8:45 PM</p> <!-- hey... this time thing is just a placeholder. if you want to fix it... good use of your time-->>
+    </div>
+
+    <h1>ParcelOS</h1>
+
+    <div class="welcome">
+
+        <img src="./assets/spinning-capybara.gif" alt="Spinning capybara">
+        <h2> Welcome to ParcelOS, a collaborative webOS. This is version 1.</h2>
+        <img src="./assets/spinning-capybara.gif" alt="Spinning capybara">
+    </div>
+
+
+    <!-- Apps -->
+
+    <div class="desktop">
+
+        <!-- App 1, ABOUT -->
+
+        <div class="desktop-app" onclick="openApp('About ParcelOS', './apps/about.html')"> <!--To make apps, copy paste this with new file-->
+            <img src="./assets/info.png" alt="About ParcelOS">
+            <p>About</p>
+        </div>
+    </div>
+
+
+    <!-- App window -->
+
+    <div class="window" id="appWindow">
+        <div class="window-titlebar" id="windowTitlebar">
+            <span id="windowTitle">Application</span>
+            <div class="window-controls">
+                <button id="closeWindow" title="Close">✕</button>
+            </div>
+        </div>
+        <iframe
+            id="appFrame"
+            src="about:blank"
+            title="Application window"
+            sandbox="allow-scripts allow-forms"
+        ></iframe>
+    </div>
+</body>
+</html>
