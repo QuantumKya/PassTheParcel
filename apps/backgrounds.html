@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgrounds</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        label,
+        select,
+        button {
+            font: inherit;
+        }
+
+        select {
+            display: block;
+            width: 100%;
+            margin: 8px 0 16px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+
+        #status {
+            min-height: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose a background</h1>
+    <select id="background">
+        <option value="bg1.png">Riverbank</option>
+        <option value="bg2.png">Jade</option>
+        <option value="bg3.png">Azul</option>
+    </select>
+    <button id="apply" type="button">Apply</button>
+    <p id="status" aria-live="polite"></p>
+
+    <script>
+        const backgrounds = ["bg1.png", "bg2.png", "bg3.png"];
+        const backgroundSelect = document.getElementById("background");
+        const status = document.getElementById("status");
+
+        window.addEventListener("message", (event) => {
+            if (event.source !== window.parent || !backgrounds.includes(event.data)) return;
+            backgroundSelect.value = event.data;
+        });
+
+        document.getElementById("apply").addEventListener("click", () => {
+            window.parent.postMessage(backgroundSelect.value, "*");
+            status.textContent = "Background applied.";
+        });
+    </script>
+</body>
+
+</html>

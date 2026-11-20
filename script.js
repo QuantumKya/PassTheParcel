@@ -1,3 +1,23 @@
+const backgrounds = ["bg1.png", "bg2.png", "bg3.png"];
+const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+let currentBackground = randomBackground;
+
+function setBackground(background) {
+  currentBackground = background;
+  document.body.style.backgroundImage = `url("./assets/${background}")`;
+}
+
+setBackground(currentBackground);
+
+window.addEventListener("message", (event) => {
+  const backgroundAppFrame = Array.from(document.querySelectorAll(".window iframe")).find(
+    (frame) => frame.title === "Backgrounds" && frame.contentWindow === event.source
+  );
+
+  if (!backgroundAppFrame || !backgrounds.includes(event.data)) return;
+  setBackground(event.data);
+});
+
 const windowContainer = document.getElementById("windowContainer"); // Grabs window container from index.html
 
 const clock = document.getElementById("clock");
@@ -51,6 +71,13 @@ function openApp(name, path) {
 
   const titlebar = appWindow.querySelector(".window-titlebar");
   const closeButton = appWindow.querySelector(".close");
+  const appFrame = appWindow.querySelector("iframe");
+
+  if (appFrame.title === "Backgrounds") {
+    appFrame.addEventListener("load", () => {
+      appFrame.contentWindow.postMessage(currentBackground, "*");
+    });
+  }
 
   appWindow.addEventListener("pointerdown", () => {
     highestZIndex++;
