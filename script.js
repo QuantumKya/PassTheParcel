@@ -1,5 +1,20 @@
 const windowContainer = document.getElementById("windowContainer"); // Grabs window container from index.html
 
+const clock = document.getElementById("clock");
+
+function updateClock() {
+  clock.textContent = new Date().toLocaleString("en-US", {
+    month: "numeric",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
 let highestZIndex = 1000;
 let windowCount = 0;
 
