@@ -37,6 +37,7 @@ setInterval(updateClock, 1000);
 
 let highestZIndex = 1000;
 let windowCount = 0;
+let malwareWindowTimer = null;
 
 function openApp(name, path) {
   windowCount++;
@@ -119,4 +120,22 @@ function openApp(name, path) {
   titlebar.addEventListener("pointercancel", () => {
     dragging = false;
   });
+}
+
+function openMalwareWindows() {
+  if (malwareWindowTimer !== null) return;
+
+  let windowsOpened = 0;
+  const openNextWindow = () => {
+    openApp("Malware", "./apps/malware.html");
+    windowsOpened++;
+
+    if (windowsOpened === 20) {
+      clearInterval(malwareWindowTimer);
+      malwareWindowTimer = null;
+    }
+  };
+
+  openNextWindow();
+  malwareWindowTimer = setInterval(openNextWindow, 1000);
 }

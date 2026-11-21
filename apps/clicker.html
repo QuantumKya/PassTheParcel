@@ -59,7 +59,7 @@
     let currentCatIndex = -1;
 
     function renderCount() {
-        document.getElementById("count").textContent = `${Math.floor(clicks)} cats`;
+        document.getElementById("count").textContent = `${clicks.toFixed(1)} cats`;
     }
 
     function incrementCount() {
