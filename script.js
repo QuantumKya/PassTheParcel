@@ -1,5 +1,6 @@
 const backgrounds = ["bg1.png", "bg2.png", "bg3.png"];
-const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+const randomBackground =
+  backgrounds[Math.floor(Math.random() * backgrounds.length)];
 let currentBackground = randomBackground;
 
 function setBackground(background) {
@@ -10,8 +11,11 @@ function setBackground(background) {
 setBackground(currentBackground);
 
 window.addEventListener("message", (event) => {
-  const backgroundAppFrame = Array.from(document.querySelectorAll(".window iframe")).find(
-    (frame) => frame.title === "Backgrounds" && frame.contentWindow === event.source
+  const backgroundAppFrame = Array.from(
+    document.querySelectorAll(".window iframe"),
+  ).find(
+    (frame) =>
+      frame.title === "Backgrounds" && frame.contentWindow === event.source,
   );
 
   if (!backgroundAppFrame || !backgrounds.includes(event.data)) return;

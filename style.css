@@ -74,10 +74,10 @@ h2 {
 
 .desktop {
     display: grid;
-    grid-template-columns: repeat(10, 100px);
+    grid-template-columns: repeat(6, 100px);
     gap: 30px;
     padding: 32px;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
 }
 
@@ -101,9 +101,9 @@ h2 {
 }
 
 .desktop-app p {
-    font-family: Arial, sans-serif;
+    font-family: 'Patrick Hand';
     color: white;
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 1px 1px 3px rgb(189, 182, 182);
     text-align: center;
     margin-top: 8px;
 }
