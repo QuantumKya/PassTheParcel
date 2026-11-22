@@ -11,6 +11,7 @@ Here are the neat features:
 - App icons: click them to open draggable windows
 - Random background upon launch, can be changed in an app. Three different options.
 - Apps for information, how to add apps and a list of collaborators.
+- Kiwipedia! Wikipedia, but very fake and very silly.
 - Cat clicker game! Click the cat, and it cycles through images. Buttons to buy more CPS and %PS.
 - Malware! When you click it, it opens 20 windows of a silly pop-up in an attempt to emulate old windowspam malware.
 - Time and date in the top bar! Also, spinning capybaras.
