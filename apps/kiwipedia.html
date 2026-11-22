@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About ParcelOS</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            padding: 24px;
+            background: white;
+            color: #333;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Kiwipedia!</h1>
+    <p>the free encyclopedia that anyone can edit.</p>
+    <hr>
+    <h4>From today's featured article</h4>
+    <p id="featuredArticle">The pluberry is a fruit native to Canada. The pluberry was first grown in Ottowa. Since the 1890s, it has been spread throughout the Canada and has become the most commonly consumed fruit there.</p>
+    <hr>
+    <h4>Did you know...</h4>
+    <ul id="didYouKnow"></ul>
+    <script>
+        const featuredArticles = [
+            "The pluberry is a fruit native to Canada. The pluberry was first grown in Ottowa. Since the 1890s, it has been spread throughout the Canada and has become the most commonly consumed fruit there. It can be used to produce jam, ice cream, and explosives. The volatile compounds found in the pluberry have been traditionally used to produce explosive weaponry. Thus, their cultivation is generally prohibitted in every country but Canada. The Canadian government has been preserving pluberry juice for years, waiting for the opportunity to commit war crimes.",
+            "Jill Hemickle was a soldier in World War 1½. She signed up for military service in the Austro-Hungarian empire as a dare on Halloween night, 1918. Unfortunately for her, her country officially dissolved on that same day. But she was already on a flight to the front. Turbulence caused her to land 12 days later, on November 11, the same day that the war officially ended. Due to slow mail systems, Hemickle ripped through the countryside for years, without ever knowing of the war's end. Historians estimate her to have killed dozens and to have caused $56,000,000,020 in property damage. Years later, when police finally arrested her and ended her murder spree, she was given community service."
+        ];
+
+        const featuredArticle =
+            featuredArticles[Math.floor(Math.random() * featuredArticles.length)];
+        document.getElementById("featuredArticle").textContent = featuredArticle;
+
+        const didYouKnowFacts = [
+            "Studies show that only 12% of fun facts are actually fun.",
+            "This is the best app on ParcelOS.",
+            "Soyjaks are generally funny. The Soyjak community is generally not.",
+            "Hack Club earned $22M of revenue in 2025.",
+            "Every battle is lost before it is fought.",
+            "Tables are usually larger than tablets. However, leafs are usually smaller than leaflets.",
+            "The world's largest leaf is pretty large.",
+            "Each share of Meta stock comes with 1 acre of land in the Metaverse.",
+            "The Despot is universally respected.",
+            "Inviduality is important!",
+            "New York City has some really good food.",
+            "We all love Peter Stuyvesant.",
+            "Nuclear thermal propulsion uses nuclear reactors to heat hydrogen, creating thrust.",
+            "VS Code is a good IDE.",
+            "Please don't start a podcast.",
+            "Vegans are generally right about everything.",
+            "Picnics only work in theory.",
+            "People like good movies.",
+            "Bunnies will hop, and funnies will Hoppe.",
+            "01001001 00100111 01101101 00100000 01101110 01101111 01101110 00101101 01100010 01101001 01101110 01100001 01110010 01111001",
+            "LOOK BEHIND YOU!",
+            "Hey, this is kind of like Minecraft splash text.",
+            "Mini-soda > Obamna",
+            "Simply stated, this isn't funny.",
+            "The population shall populate, and the recreation shall... what, recreate?",
+            "Snopflowers open when it is raining and close when it is clear.",
+            "The only difference between Earth and Heaven is that Heaven has no mosquitoes.",
+            "Copper is the tastiest metal, according to numerous empirical studies.",
+            "80% of peas come from 20% of pods.",
+            "Stickers stick because of glue. Gluers glue because of stick.",
+            "Floppy disks are pretty nostalgic.",
+            "70% of Xitter posts are made by bots, but 100% of Xitter posts are made of lies.",
+            "Crane games are no fun.",
+            "Cranes are large birds, but they don't taste bigger than chickens. Pumas are big birds, and they taste bigger than housecats.",
+            "Fact 35 has aura.",
+            "Creative sterility plagues our society.",
+            "Don't be breezy, be yeezy!",
+            "Fanatical identitarianism is a threat to democracy! Report all identitarians to your local Thoughtcrime department today!",
+            "Animation is NOT a genre!",
+            "Be nice. You never know when you might meet a billionaire disguised as a stinky homeless man.",
+        ];
+
+        const shuffledFacts = [...didYouKnowFacts];
+        for (let index = shuffledFacts.length - 1; index > 0; index--) {
+            const randomIndex = Math.floor(Math.random() * (index + 1));
+            [shuffledFacts[index], shuffledFacts[randomIndex]] =
+                [shuffledFacts[randomIndex], shuffledFacts[index]];
+        }
+        const didYouKnowList = document.getElementById("didYouKnow");
+
+        shuffledFacts.slice(0, 5).forEach((fact) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = fact;
+            didYouKnowList.appendChild(listItem);
+        });
+    </script>
+
+</body>
+</html>
