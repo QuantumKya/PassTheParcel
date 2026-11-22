@@ -19,5 +19,6 @@ Here are the neat features:
 Contributions:
 
 - PONG! By Eli Ziv! The classic arcade game, coded fully in HTML/JS and brought to ParcelOS.
+- Scientific calculator, L. K. Prathika. A functional and useful calculator with dozens of functions and features.
 
 <img width="1915" height="943" alt="Screenshot 2026-11-21 014905" src="https://github.com/user-attachments/assets/83960e10-c829-4903-a331-8715faa7f623" />
