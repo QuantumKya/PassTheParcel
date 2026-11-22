@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Library of Babel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 24px;
+            background: white;
+            color: #333;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Library of Babel</h1>
+    <p>This website can theoretically contain every 12 letter word or sequence.</p>
+    <p>I mean, "PARCELOSCOOL" is somewhere in there...</p>
+    <h1 id="babeltext">Click the refresh button!</h1>
+    <button onclick='babel()'>REFRESH</button>
+<script>
+    function babel() {
+        const alphabet = "abcdefghijklmnopqrstuvwxyz";
+        const sequence = Array.from({ length: 12 }, () =>
+            alphabet[Math.floor(Math.random() * alphabet.length)]
+        ).join("");
+        document.getElementById("babeltext").textContent = sequence;
+    }
+</script>
+</body>
+</html>
